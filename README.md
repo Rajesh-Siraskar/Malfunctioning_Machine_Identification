@@ -1,5 +1,7 @@
 # Valve Diagnostics
 --------------------
 
-This project detects a faulty valve using the audio signals
+22-May-2021
 
+- This project detects a faulty valve using the audio signals
+- Librosa
