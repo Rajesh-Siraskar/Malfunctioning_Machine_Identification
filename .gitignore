@@ -1,4 +1,5 @@
 /audio_files/*
+/__pycache__/*
 /valve_sound_files/*
 /images/*
 /Storage/*
