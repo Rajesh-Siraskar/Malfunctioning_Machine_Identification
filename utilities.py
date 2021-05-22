@@ -26,14 +26,22 @@ def load_mappings(json_file):
     return machine_audio_mapping 
 
 def plot_history (history, regularization_flag=False):
+    """Plot training history.
 
-    #sns.set_theme(style="darkgrid")
+    Keyword arguments:
+    history -- dictionary with loss and accuracy
+    regularization_flag -- whether the plot is before or after regularization (default False)
+    
+    Returns:
+    None
+    """
+    
+    sns.set_theme(style="darkgrid")
     # Plot the responses for different events and regions
-    #sns.lineplot(x="timepoint", y="signal", hue="region", style
-  
+
     fig, axs = plt.subplots(2, figsize=(12, 8)) # width, height
             
-    # Accuracy sub-plot
+    # Accuracy sub-plot    
     axs[0].plot(history.history["acc"], label="Training accuracy")
     axs[0].plot(history.history["val_acc"], label="Test accuracy")
     axs[0].set_ylabel("Accuracy")
