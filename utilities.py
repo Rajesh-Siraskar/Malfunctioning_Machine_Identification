@@ -15,20 +15,28 @@ def load_data (json_file):
         
     return X, y
 
-def load_mappings(json_file):
+def map_signal_labels(json_file):
+    """Return the semantic/actual label from 'index'. These are the folder names such as 'valve_abnormal' 
+
+    Arguments:
+    json_file -- Data dictionary that has the mapping to folder names 
+    
+    Returns:
+    machine_label_mapping -- The mapped labels
+    """
     with open(json_file, "r") as fp:
         data = json.load(fp)
         
         # Note: mfcc was converted from a numpy array to list before storing in JSON
         #  Need convert back to numpy array
-        machine_audio_mapping = np.array(data["mapping"])
+        machine_label_mapping = np.array(data["mapping"])
         
-    return machine_audio_mapping 
+    return machine_label_mapping 
 
 def plot_history (history, regularization_flag=False):
     """Plot training history.
 
-    Keyword arguments:
+    Arguments:
     history -- dictionary with loss and accuracy
     regularization_flag -- whether the plot is before or after regularization (default False)
     
@@ -63,7 +71,7 @@ def plot_history (history, regularization_flag=False):
     plt.show()
     return
     
-def predict(model, X, y, json_file):
+def predict(model, X, y, signal_label_mappings):
     
     # For prediction we need 4 D so need to add the sample number as 1st dim.
     # X -> (1, 130, 13, 1) where the 1st dim is the sample size = 1
@@ -74,14 +82,11 @@ def predict(model, X, y, json_file):
     
     # Extract index with max. value
     predicted_index = np.argmax(prediction, axis=1)
-
-    # Get semantaic labels (i.e. text genre labels)
-    mapping = load_mappings(json_file)
-    
+ 
     # Map indexes to genre labels
-    expected_machine_label = mapping[y]
-    predicted_machine_label = mapping[predicted_index][0]
+    expected_machine_label = signal_label_mappings[y]
+    predicted_machine_label = signal_label_mappings[predicted_index][0]
     
-    print("Expected machine signal: '{}'. Predicted machine signal: '{}'".format(expected_machine_label, predicted_machine_label))
+    print("Expected machine signal: '{}' \t|  Predicted: '{}'".format(expected_machine_label, predicted_machine_label))
     
     return
