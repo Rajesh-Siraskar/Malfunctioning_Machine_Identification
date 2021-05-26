@@ -3,6 +3,9 @@ import json
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.metrics import confusion_matrix
+import pandas as pd
+import matplotlib.pyplot as plt
 
 def load_data (json_file):
     with open(json_file, "r") as fp:
@@ -82,11 +85,22 @@ def predict(model, X, y, signal_label_mappings):
     
     # Extract index with max. value
     predicted_index = np.argmax(prediction, axis=1)
- 
+    
     # Map indexes to genre labels
-    expected_machine_label = signal_label_mappings[y]
+    actual_machine_label = signal_label_mappings[y]
     predicted_machine_label = signal_label_mappings[predicted_index][0]
     
-    print("Expected machine signal: '{}' \t|  Predicted: '{}'".format(expected_machine_label, predicted_machine_label))
+    #print("Expected machine signal: '{}' \t\t|  Predicted: '{}'".
+    #      format(actual_machine_label, predicted_machine_label))
     
+    return (actual_machine_label, predicted_machine_label)
+
+def plot_confusion_matrix(y_actual, y_predicted):
+    data = confusion_matrix(y_actual, y_predicted)
+    df_cm = pd.DataFrame(data, columns=np.unique(y_actual), index = np.unique(y_actual))
+    df_cm.index.name = 'Actual'
+    df_cm.columns.name = 'Predicted'
+    plt.figure(figsize = (10,7))
+    sns.set(font_scale=1.4) # for label size
+    sns.heatmap(df_cm, cmap="Blues", annot=True, annot_kws={"size": 10}) # font size
     return
