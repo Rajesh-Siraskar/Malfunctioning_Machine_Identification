@@ -100,7 +100,7 @@ def plot_confusion_matrix(y_actual, y_predicted):
     df_cm = pd.DataFrame(data, columns=np.unique(y_actual), index = np.unique(y_actual))
     df_cm.index.name = 'Actual'
     df_cm.columns.name = 'Predicted'
-    plt.figure(figsize = (10,7))
-    sns.set(font_scale=1.4) # for label size
+    plt.figure(figsize = (8, 5)) # 10, 7
+    sns.set(font_scale = 1) # for label size
     sns.heatmap(df_cm, cmap="Blues", annot=True, annot_kws={"size": 10}) # font size
     return
