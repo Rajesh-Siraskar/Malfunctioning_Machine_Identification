@@ -12,45 +12,16 @@
 Consider a Cement Plant where the Fan forms an important equipment.
 
 Reference: PREHEATER BLOCKAGES Problem Diagnosis and solution
+
 https://www.cementequipment.org/home/key-equipment-working-principles-types-daily-maintenance/preheater-blockages-problem-diagnosis-solution/
 
-Operational issues
-BLOCKAGES AND PERFORMANCE
-Build-ups
-- increasing build-ups cause reduced gas flows at the same ID fan pressure
+### Operational issues
+
+Blockages and Performance:
+
+- Build-ups: Increasing build-ups cause reduced gas flows at the same ID fan pressure
 Fluctuating gas flows due to fluctuating O2 and heat levels, CO-increases and excess O2 requires ID fan increase
-
-•        Fluctuating fuel
-fluctuating temps cause fuel increase, thereby increasing S or Cl inputs
-
-•        Cold Air Ingress
-Increasing the ID fan to keep up, kiln inlet under-pressure increase draws in more false air
-
-•        Circulating Phenomena
-Destablized operation, CO increase and false air cause volatization to spiral out of control
-
-•        Blockages
-increasing volatization causes more build-ups. Return to the start…
-
-INVESTIGATION STEPS
-General description of situation (position of build-ups, reproducible conditions that seem to lead to the situation)
-Ongoing analysis of hot meal (LOI, SO3, Cl, Na2O, K2O, CaO)
-Pyro-section mass and heat balance
-Plot ongoing points on Cl-SO3 graph
-Sample the build-up material (XRF)
-Analyse Inputs-Outputs for responsible circulating element
-RESULTS OF BUILD-UPS SEVERE!
-Blockages cause unplanned shut-downs and loss of earnings
-Constant start-up and stop decreases refractory life
-Build-up and dropping off causes mechanical wear of refractory
-Severe safety issues involved with cleaning big build-ups
-Clinker quality fluctuations + restarts = lots of rejected clinker
-Increased heat energy use due to:
-dusty clinker reduces radiation inside kiln
-more false air and operation at more excess air
-Increase shifts to cope with cleaning and higher maintenance
-Lower possibility to use alternative fuels because heat levels lower
-Clinker cooler instability means increased cement setting times
-Lower production level if preheater, kiln inlet, burner, or cooler is the bottleneck
-Lower production because away from optimum performance
-Increase wear on burner and refractories due to dust and velocities increase
+- Fluctuating fuel: fluctuating temps cause fuel increase, thereby increasing S or Cl inputs
+- Cold Air Ingress: Increasing the ID fan to keep up, kiln inlet under-pressure increase draws in more false air
+- Circulating Phenomena: destablized operation, CO increase and false air cause volatization to spiral out of control
+- Blockages: increasing volatization causes more build-ups.
